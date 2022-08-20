@@ -1,0 +1,110 @@
+{
+  "@context": "https://schema.org/",
+  "@id": "https://mindustrygame.github.io/",
+  "@type": [
+    "MobileApplication",
+    "VideoGame"
+  ],
+  "applicationCategory": "GameApplication",
+  "applicationSubcategory": [
+    "Strategy",
+    "Tower defense"
+  ],
+  "creator": {
+    "@id": "https://anuken.github.io/",
+    "@type": "Person",
+    "additionalName": [
+      "Anuken",
+      "AnukenDev"
+    ],
+    "name": "Anuke",
+    "sameAs": "https://github.com/Anuken",
+    "url": "https://anuken.github.io/"
+  },
+  "datePublished": "2017-04-30",
+  "downloadUrl": "https://github.com/Anuken/Mindustry/releases/latest/download/Mindustry.jar",
+  "genre": [
+    "Strategy",
+    "Tower defense"
+  ],
+  "installUrl": [
+    "https://anuke.itch.io/mindustry",
+    "https://apps.apple.com/us/app/mindustry/id1385258906",
+    "https://f-droid.org/packages/io.anuke.mindustry/",
+    "https://store.steampowered.com/app/1127400/Mindustry/"
+  ],
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "isPartOf": {
+    "@id": "https://github.com/Anuken/Mindustry",
+    "@type": "SoftwareSourceCode",
+    "codeRepository": "https://github.com/Anuken/Mindustry",
+    "creator": {
+      "@id": "https://anuken.github.io/"
+    },
+    "hasPart": {
+      "@id": "https://mindustrygame.github.io"
+    },
+    "mainEntityOfPage": "https://github.com/Anuken/Mindustry",
+    "maintainer": {
+      "@id": "https://anuken.github.io/"
+    },
+    "name": "Mindustry",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "Java",
+      "sameAs": "https://en.wikipedia.org/wiki/Java_(programming_language)"
+    },
+    "publisher": {
+      "@id": "https://anuken.github.io/"
+    },
+    "sameAs": "https://github.com/Anuken/Mindustry",
+    "targetProduct": {
+      "@id": "https://mindustrygame.github.io/"
+    },
+    "url": "https://github.com/Anuken/Mindustry"
+  },
+  "license": "https://raw.githubusercontent.com/Anuken/Mindustry/master/LICENSE",
+  "mainEntityOfPage": [
+    "https://anuke.itch.io/mindustry",
+    "https://apps.apple.com/us/app/mindustry/id1385258906",
+    "https://f-droid.org/packages/io.anuke.mindustry/",
+    "https://mindustrygame.github.io/",
+    "https://store.steampowered.com/app/1127400/Mindustry/"
+  ],
+  "maintainer": {
+    "@id": "https://anuken.github.io/"
+  },
+  "memoryRequirements": "1GB",
+  "name": "Mindustry",
+  "operatingSystem": [
+    "Android",
+    "IOS",
+    "Linux",
+    "MacOS",
+    "Microsoft Windows"
+  ],
+  "playMode": [
+    "CoOp",
+    "MultiPlayer",
+    "SinglePlayer"
+  ],
+  "publisher": {
+    "@id": "https://anuken.github.io/"
+  },
+  "sameAs": [
+    "https://anuke.itch.io/mindustry",
+    "https://apps.apple.com/us/app/mindustry/id1385258906",
+    "https://f-droid.org/packages/io.anuke.mindustry/",
+    "https://mindustrygame.github.io/",
+    "https://store.steampowered.com/app/1127400/Mindustry/"
+  ],
+  "screenshot": [
+    "https://mindustrygame.github.io/images/1.png",
+    "https://mindustrygame.github.io/images/2.png",
+    "https://mindustrygame.github.io/images/3.png"
+  ],
+  "softwareRequirements": "Java",
+  "storageRequirements": "200MB",
+  "url": "https://mindustrygame.github.io/"
+}
