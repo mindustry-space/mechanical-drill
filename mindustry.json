@@ -45,6 +45,7 @@
     "hasPart": {
       "@id": "https://mindustrygame.github.io"
     },
+    "license": "https://raw.githubusercontent.com/Anuken/Mindustry/master/LICENSE",
     "mainEntityOfPage": "https://github.com/Anuken/Mindustry",
     "maintainer": {
       "@id": "https://anuken.github.io/"
