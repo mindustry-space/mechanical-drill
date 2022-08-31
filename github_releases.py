@@ -17,6 +17,8 @@ versions = defaultdict(dict)
 for release in track(repo.get_releases()):
     if release.draft:
         continue
+    
+    build = release.tag_name.replace("v", "")
 
     for key in [
         "body",
@@ -28,21 +30,21 @@ for release in track(repo.get_releases()):
         "title",
         "zipball_url",
     ]:
-        versions[release.tag_name][key] = getattr(release, key)
+        versions[build][key] = getattr(release, key)
 
-    versions[release.tag_name]["assets"] = defaultdict(dict)
+    versions[build]["assets"] = defaultdict(dict)
     for asset in release.get_assets():
         if asset.state != "uploaded":
             # https://api.github.com/repos/Anuken/Mindustry/releases/assets/63716232
             continue
         
         for key in ["browser_download_url", "content_type", "id", "name", "size"]:
-            versions[release.tag_name]["assets"][release_types[asset.name]][
+            versions[build]["assets"][release_types[asset.name]][
                 key
             ] = getattr(asset, key)
 
 
-with open("versions.json", "wb") as file:
+with open("github_releases.json", "wb") as file:
     file.write(
         orjson.dumps(
             versions,
