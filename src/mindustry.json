@@ -1,32 +1,20 @@
 {
   "@context": "https://schema.org/",
   "@id": "https://mindustrygame.github.io/",
-  "@type": [
-    "MobileApplication",
-    "VideoGame"
-  ],
+  "@type": ["MobileApplication", "VideoGame"],
   "applicationCategory": "GameApplication",
-  "applicationSubcategory": [
-    "Strategy",
-    "Tower defense"
-  ],
+  "applicationSubcategory": ["Strategy", "Tower defense"],
   "creator": {
     "@id": "https://anuken.github.io/",
     "@type": "Person",
-    "additionalName": [
-      "Anuken",
-      "AnukenDev"
-    ],
+    "additionalName": ["Anuken", "AnukenDev"],
     "name": "Anuke",
     "sameAs": "https://github.com/Anuken",
     "url": "https://anuken.github.io/"
   },
   "datePublished": "2017-04-30",
   "downloadUrl": "https://github.com/Anuken/Mindustry/releases/latest/download/Mindustry.jar",
-  "genre": [
-    "Strategy",
-    "Tower defense"
-  ],
+  "genre": ["Strategy", "Tower defense"],
   "installUrl": [
     "https://anuke.itch.io/mindustry",
     "https://apps.apple.com/us/app/mindustry/id1385258906",
@@ -78,18 +66,8 @@
   },
   "memoryRequirements": "1GB",
   "name": "Mindustry",
-  "operatingSystem": [
-    "Android",
-    "IOS",
-    "Linux",
-    "MacOS",
-    "Microsoft Windows"
-  ],
-  "playMode": [
-    "CoOp",
-    "MultiPlayer",
-    "SinglePlayer"
-  ],
+  "operatingSystem": ["Android", "IOS", "Linux", "MacOS", "Microsoft Windows"],
+  "playMode": ["CoOp", "MultiPlayer", "SinglePlayer"],
   "publisher": {
     "@id": "https://anuken.github.io/"
   },
