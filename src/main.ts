@@ -1,5 +1,13 @@
-import { CheerioCrawler, log } from "crawlee";
-import { router } from "./routes.js";
+import { Octokit } from "octokit";
+import { scrapeGitHubReleases } from "./github.js";
+import { scrapeItchDevlogs } from "./itch.js";
 
-const crawler = new CheerioCrawler({ requestHandler: router });
-await crawler.run(["https://anuke.itch.io/mindustry/devlog"]);
+if (!process.env.GITHUB_TOKEN)
+  throw "GITHUB_TOKEN environment variable is not set.";
+
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+  timeZone: "Etc/UTC",
+});
+
+await Promise.all([scrapeItchDevlogs(), scrapeGitHubReleases(octokit)]);
