@@ -1,13 +1,19 @@
 import { Octokit } from "octokit";
-import { scrapeGitHubReleases } from "./github.js";
-import { scrapeItchDevlogs } from "./itch.js";
+
+import { scrapeFromGit } from "./git.js";
+import { scrapeFromGitHub } from "./github.js";
+import { scrapeFromItch } from "./itch.js";
 
 if (!process.env.GITHUB_TOKEN)
   throw "GITHUB_TOKEN environment variable is not set.";
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-  timeZone: "Etc/UTC",
-});
-
-await Promise.all([scrapeItchDevlogs(), scrapeGitHubReleases(octokit)]);
+Promise.all([
+  scrapeFromGit(),
+  scrapeFromGitHub(
+    new Octokit({
+      auth: process.env.GITHUB_TOKEN,
+      timeZone: "Etc/UTC",
+    })
+  ),
+  scrapeFromItch(),
+]);

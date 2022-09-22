@@ -1,10 +1,12 @@
-import { KeyValueStore, log } from "crawlee";
+import { KeyValueStore, Log } from "crawlee";
 import { Octokit } from "octokit";
 
-export async function scrapeGitHubReleases(octokit: Octokit) {
+const log = new Log({ prefix: "GitHub" });
+
+export async function scrapeFromGitHub(octokit: Octokit) {
   const store = await KeyValueStore.open("github_releases");
 
-  log.info("Scraping GitHub releases");
+  log.info("Starting to scrape");
   for await (const { data: releases } of octokit.paginate.iterator(
     "GET /repos/{owner}/{repo}/releases",
     {
@@ -34,7 +36,7 @@ export async function scrapeGitHubReleases(octokit: Octokit) {
         tarball_url: release.tarball_url,
         zipball_url: release.zipball_url,
       });
+      log.info("Scraped from " + release.tag_name);
     }
   }
-  log.info("Finished scraping GitHub releases");
 }

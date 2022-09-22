@@ -4,8 +4,7 @@ const itch = await Dataset.open("itch");
 const router = createCheerioRouter();
 const crawler = new CheerioCrawler({ requestHandler: router });
 
-router.addDefaultHandler(async ({ enqueueLinks, log }) => {
-  log.info("enqueuing ");
+router.addDefaultHandler(async ({ enqueueLinks }) => {
   await enqueueLinks({
     globs: ["https://anuke.itch.io/mindustry/devlog/**"],
     label: "itch",
@@ -20,8 +19,6 @@ type Upload = {
 };
 
 router.addHandler("itch", async ({ request, $, log }) => {
-  log.info("scraping " + request.loadedUrl);
-
   let uploads: Upload[] = [];
   $(".upload").each((_, upload) => {
     let platforms: string[] = [];
@@ -53,8 +50,9 @@ router.addHandler("itch", async ({ request, $, log }) => {
     uploads,
     url: request.loadedUrl,
   });
+  log.info("Scraped from " + request.loadedUrl);
 });
 
-export async function scrapeItchDevlogs() {
+export async function scrapeFromItch() {
   await crawler.run(["https://anuke.itch.io/mindustry/devlog"]);
 }
