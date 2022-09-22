@@ -2,7 +2,7 @@
   "name": "mechanical-drill",
   "version": "0.0.1",
   "type": "module",
-  "description": "This is an example of a Crawlee project.",
+  "description": "Scrapers used to collect data about Mindustry",
   "dependencies": {
     "crawlee": "^3.0.0",
     "git-cat-file": "^0.2.0",
