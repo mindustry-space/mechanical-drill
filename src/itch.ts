@@ -1,6 +1,6 @@
-import { Dataset, createCheerioRouter, CheerioCrawler } from "crawlee";
+import { CheerioCrawler, createCheerioRouter, KeyValueStore } from "crawlee";
 
-const itch = await Dataset.open("itch");
+const store = await KeyValueStore.open("itch");
 const router = createCheerioRouter();
 const crawler = new CheerioCrawler({ requestHandler: router });
 
@@ -43,14 +43,14 @@ router.addHandler("itch", async ({ request, $, log }) => {
     });
   });
 
-  await itch.pushData({
+  await store.setValue(request.url.split("/devlog/")[1].split("/")[0], {
     body: $("section.post_body").html(),
     published_at: $("div.post_meta").children("span").attr("title"),
     title: $("section.post_header").children("h1").text(),
     uploads,
     url: request.loadedUrl,
   });
-  log.info("Scraped from " + request.loadedUrl);
+  log.info("Scraped from " + request.url);
 });
 
 export async function scrapeFromItch() {
